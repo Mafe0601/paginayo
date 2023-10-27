@@ -1,0 +1,86 @@
+.nav li{
+    list-style: none;
+}
+
+.nav a{
+    text-decoration: none;
+    color: #fff;
+    margin-left: 2rem;
+}
+
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 10vh;
+    padding: 0 4rem;
+    font-size: 1.5vw;
+    font-weight: 400;
+    z-index: 100;
+    background: #000636;
+    margin: 2rem 3rem;
+    border-radius: 1.5rem;
+    /*filter: blur(1px);*/
+}
+
+.nav > .nav__brand{
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav__menu{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.nav__toggler div{
+    width: 2.5rem;
+    height: .2rem;
+    margin: .4rem;
+    transition: .4s ease-in;
+    background-color: #fff;
+}
+
+.nav__toggler{
+    cursor: pointer;
+    display: none;
+}
+
+@media screen and (max-width:768px){
+    .nav__toggler{
+        display: block;
+    }
+    .nav__menu{
+        position: fixed;
+        top: 10vh;
+        right: 0;
+        width: 100%;
+        background: #afafaf;
+        flex-direction: column;
+        transform: translateY(-170%);
+        transition: .5s ease-in;
+        z-index: 110;
+    }
+
+    nav a:nth-child(1){
+        font-size: 2rem;
+    }
+}
+
+.nav__active{
+    transform: translate(0);
+}
+
+.toggle .linea1{
+    transform: rotate(-45deg) translate(-4px, 5px);
+}
+
+.toggle .linea2{
+    opacity: 0;
+}
+
+.toggle .linea3{
+    transform: rotate(45deg) translate(-4px, -5px);
+}
