@@ -21,7 +21,7 @@ const Navbar = () => {
       </div>
       <nav className="nav">
         <Link to="/" className="nav__brand">
-          <img src={logo} alt="Mi logo" style={{width:"4rem", paddingTop:".9rem"}}/>
+          <img src={logo} alt="Mi logo" style={{width:"4rem"}}/>
         </Link>
         <ul className={active}>
           <li className="nav__item">

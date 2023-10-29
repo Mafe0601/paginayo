@@ -4,10 +4,12 @@ import Navbar from './components/navbar/Navbar';
 import About from './components/About';
 import Works from './components/Works';
 import Contact from './components/Contact';
+import ParticlesFondo from './components/particles/ParticlesFondo';
 
 function App() {
   return (
     <BrowserRouter>
+    <ParticlesFondo/>
     <Navbar/>
      <Routes>
      <Route path="/*" element={<Home/>} />
