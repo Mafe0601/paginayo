@@ -1,4 +1,7 @@
 const particlesConfig={
+  "fullScreen":{
+    "enable": false
+  },
     "particles": {
       "number": {
         "value": 80,
@@ -8,13 +11,13 @@ const particlesConfig={
         }
       },
       "color": {
-        "value": "#02bad4"
+        "value": "random"
       },
       "shape": {
         "type": "circle",
         "stroke": {
           "width": 0,
-          "color": "#02bad4"
+          "color": "random"
         },
         "polygon": {
           "nb_sides": 5
@@ -43,7 +46,7 @@ const particlesConfig={
       "line_linked": {
         "enable": true,
         "distance": 150,
-        "color": "#02bad4",
+        "color": "#aaa",
         "opacity": 0.4,
         "width": 1
       },
@@ -101,7 +104,8 @@ const particlesConfig={
         }
       }
     },
-    "retina_detect": true
+    "retina_detect": true,
+  
   }
 
   export default particlesConfig

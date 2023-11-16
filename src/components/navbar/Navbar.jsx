@@ -1,56 +1,56 @@
 import React, { useState } from "react";
-import "./navbar.css"
-import logo from "../../assests/images/logoyo1.png" 
+import "./navbar.css";
+import logo from "../../assests/images/logoyo1.png";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
-  const [active, setActive] = useState("nav__menu");
-  const [toggleIcon, setToggleIcon] = useState("nav__toggler");
-  const navToggle = () => {
-    active === "nav__menu"
-      ? setActive("nav__menu nav__active")
-      : setActive("nav__menu");
-    toggleIcon === "nav__toggler"
-      ? setToggleIcon("nav__toggler toggle")
-      : setToggleIcon("nav__toggler");
+  const [isNavActive, setNavActive] = useState(false);
+
+  const closeNav = () => {
+    setNavActive(false);
   };
+
+  const toggleNav = () => {
+    setNavActive(!isNavActive);
+  };
+
   return (
     <div className="nav__container">
-      <div className="filter">
-
-      </div>
-      <nav className="nav">
-        <Link to="/" className="nav__brand">
-          <img src={logo} alt="Mi logo" style={{width:"4rem"}}/>
+      <div className="filter"></div>
+      <header>
+        <Link to="/" className="logo">
+          <img src={logo} alt="Mi logo" style={{ width: "4rem" }} />
         </Link>
-        <ul className={active}>
-          <li className="nav__item">
-            <Link to="/home" className="nav__link">
-              Home
-            </Link>
-          </li>
-          <li className="nav__item">
-            <Link to="/about" className="nav__link">
-              About
-            </Link>
-          </li>
-          <li className="nav__item">
-            <Link to="/works" className="nav__link">
-              Works
-            </Link>
-          </li>
-          <li className="nav__item" style={{paddingRight:"2rem"}}>
-            <Link to="/contact" className="nav__link">
-              Contact
-            </Link>
-          </li>
-        </ul>
-        <div onClick={navToggle} className={toggleIcon}>
-          <div className="linea1"></div>
-          <div className="linea2"></div>
-          <div className="linea3"></div>
+        <div className={`${isNavActive ? "toggle" : "hamburger"}`} onClick={toggleNav}>
+          <div className="line1"></div>
+          <div className="line2"></div>
+          <div className="line3"></div>
         </div>
-      </nav>
+        <nav className={`nav-bar ${isNavActive ? "active" : ""}`}>
+          <ul>
+            <li>
+              <Link to="/home" className="active" onClick={closeNav}>
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link to="/about" className="active" onClick={closeNav}>
+                About
+              </Link>
+            </li>
+            <li>
+              <Link to="/works" className="active" onClick={closeNav}>
+                Works
+              </Link>
+            </li>
+            <li>
+              <Link to="/contact" className="active" onClick={closeNav}>
+                Contact
+              </Link>
+            </li>
+          </ul>
+        </nav>
+      </header>
     </div>
   );
 };
